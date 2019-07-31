@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+<script type="text/javascript">
+function f(id){
+  var sel = document.getElementById('select');
+  let comp = sel.value.split('.')[0]
+  window.location = '/compare/' + id + '/' + comp
+}
+</script>
+<div>
+  <h2>User info:</h2>
+  <ul>
+    <li>id: {{user.id_in_db}}</li>
+    <li><h3>Bot name:</h3>{{user.name}}<br></li>
+    <li><h3>User-Agent:</h3>{{user.agent}}<br></li>
+    <li><h3>Cookies file name:</h3>{{user.file_name}}<br></li>
+  </ul>
+</div>
+<h2>
+Compare with:
+<br>
+<select style="width:160px; height:40px; font-size:12px" id='select'>
+  {% for bot in users%}
+  <option>{{ bot[0] }}. {{ bot[1] }}</option>
+  {% endfor %}
+</select>
+<br>
+<button style="width:120px; height:40px; font-size:12px" type="button" name="button" onclick="f({{user.id_in_db}})">Compare</button>
+</h2>
+<div>
+  <h2>History</h2>
+  {% if history%}
+  {%for i in history%}
+  {{i}}
+  {% endfor%}
+  {% else %}
+  History is empty.
+  {% endif %}
+</div>
+{% endblock %}

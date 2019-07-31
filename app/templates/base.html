@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Search engine parser</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  </head>
+  <body style="margin-left:2%;">
+    <div>
+      <a href="{{ url_for('index')}}"><h3>Main page</h3></a>
+      <a href="{{ url_for('all_bots')}}"><h3>Bots</h3></a>
+    </div>
+    {% block content %}{% endblock %}
+  </body>
+</html>

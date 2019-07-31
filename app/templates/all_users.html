@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<table style="margin-left:1.5%;" border="0px">
+  <tr><td><h3>ID</h3></td><td><h3>NAME</h3></td><td><h3>User-Agent</h3></td><td><h3>Cookies file name</h3></td>
+  {% for u in users %}
+
+  <tr><td>{{ u[0] }}</td><td><a href="/bot/{{u[0]}}">{{ u[1] }}</a></td><td style="margin-left:1%;">{{ u[2] }}</td><td>{{ u[3] }}</td></tr>
+
+  {% endfor %}
+</table>
+
+{% endblock %}
