@@ -1,2 +1,2 @@
-web: gunicorn start:site-search-engine-scrapper
+web: gunicorn start:app
 heroku ps:scale web=1
