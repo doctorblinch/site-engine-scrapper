@@ -31,9 +31,17 @@ Compare with:
 <div>
   <h2>History</h2>
   {% if history%}
-  {%for i in history%}
-  {{i}}
-  {% endfor%}
+  <table>
+    <tr>
+      <td>Index</td><td>Querry</td><td>Engine</td><td>Title</td><td>Description</td><td>Time</td><td>Link</td>
+    </tr>
+    {%for his in history%}
+
+    <tr>
+      <td>{{ his[1] }}</td><td>{{ his[2] }}</td><td>{{his[7]}}</td><td>{{ his[4] }}</td><td>{{ his[5] }}</td><td>{{ his[6] }}</td><td> {{ his[3] }}</td>
+    </tr>
+    {% endfor%}
+  </table>
   {% else %}
   History is empty.
   {% endif %}
