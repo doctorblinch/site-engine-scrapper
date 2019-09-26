@@ -2,9 +2,10 @@ import urllib.parse as up
 import psycopg2
 
 from app.user_async import UserAsync
+import os
 
 up.uses_netloc.append("postgres")
-url = up.urlparse('postgres://zkynsogs:Mtak9HA6-oV5shMzPjZzd-4ZjiYAsVnv@balarama.db.elephantsql.com:5432/zkynsogs')
+url = up.urlparse(os.environ['db_url]')
 
 connection = psycopg2.connect(database=url.path[1:],
                               user=url.username,
