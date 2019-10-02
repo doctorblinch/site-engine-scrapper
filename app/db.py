@@ -7,6 +7,7 @@ import os
 up.uses_netloc.append("postgres")
 url = up.urlparse(os.environ.get('db_url'))
 
+
 connection = psycopg2.connect(database=url.path[1:],
                               user=url.username,
                               password=url.password,
