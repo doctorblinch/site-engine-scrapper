@@ -5,7 +5,7 @@ from app.user_async import UserAsync
 import os
 
 up.uses_netloc.append("postgres")
-url = up.urlparse(os.environ['db_url]')
+url = up.urlparse(os.environ.get('db_url'))
 
 connection = psycopg2.connect(database=url.path[1:],
                               user=url.username,
